@@ -36,17 +36,40 @@ If you want to tweak or enhance imgur-uploader, follow these instructions:
 Using imgur-uploader
 ^^^^^^^^^^^^^^^^^^^^
 
+
+``Options:``
+
+``--image PATH``
+
+``--login        Login To Imgur``
+
+``--add-details  Add a title and Description``
+
+``--help         Show this message and exit.``
+
+
 First, create a file called ``~/.config/imgur_uploader/uploader.cfg``, with the
 following contents (substitute your credentials)::
 
-[imgur]
-id = 9354da9ecdcfae3
-secret = 8387eca75687ecad9876ead47786edac0875dc0d
+    [imgur]
+    id = 9354da9ecdcfae3
+    secret = 8387eca75687ecad9876ead47786edac0875dc0d
 
-Otherwise, set the ``IMGUR_API_ID`` and ``IMGUR_API_SECRET`` environment
-variables in your terminal session, using your client's credentials.
+(Optional) Login to imgur by running ``imgur-uploader --login``
+it will provide a link to go to:
 
-Upload an image by running ``imgur-uploader path/to/my.gif``
+    Please Go To https://api.imgur.com/oauth2/authorize?client_id=5331f47b697084b&response_type=pin
+    Please enter pin from the imgur login:
+
+Go to the link in your browser and copy the provided pin.
+it will add the ``access_token`` and ``refresh_token`` to ``~/.config/imgur_uploader/uploader.cfg``
+
+If you wish to upload files anonymously dont run the login command
+
+Upload an image by running ``imgur-uploader --image path/to/my.gif``
+
+If you want to add a title and description run ``imgur-uploader --image path/to/my.gif --add-details``
+you will then be prompted to enter a title and description
 
 The tool will return a shortened link to your uploaded gif upon completion::
 

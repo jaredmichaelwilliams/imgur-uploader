@@ -10,13 +10,13 @@ def read(*paths):
 
 setup(
     name='imgur-uploader',
-    version='0.2.0',
+    version='0.3.0',
     description='A simple command line client for uploading files to Imgur.',
     long_description=read('README.rst'),
-    url='https://github.com/atbaker/imgur-uploader',
+    url='https://github.com/jaredmichaelwilliams/imgur-uploader',
     license='MIT',
-    author='Andrew Tork Baker',
-    author_email='andrew@atbaker.me',
+    author='Jared Williams',
+    author_email='jaredmichaelwilliams@gmail.com',
     py_modules=['imgur_uploader'],
     include_package_data=True,
     install_requires=[
